@@ -1,0 +1,31 @@
+.badge {
+  padding: 6px 11px;
+  color: $txt-white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  height: 100%;
+  text-transform: capitalize;
+
+  span {
+    text-align: center;
+  }
+
+  &-primary {
+    background-color: $second-color-blue;
+  }
+
+  &-warning {
+    background-color: $second-color-orange;
+  }
+  &-success {
+    background-color: $second-color-green;
+  }
+  &-danger {
+    background-color: $second-color-red;
+  }
+}
+
+//   shipping: "primary",
+//   pending: "warning",
+//   paid: "success",
+//   refund: "danger"

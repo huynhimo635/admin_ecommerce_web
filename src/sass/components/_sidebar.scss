@@ -1,0 +1,47 @@
+.sidebar {
+  min-width: $sidebar-width;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $main-bg;
+  box-shadow: $box-shadow;
+
+  &__logo {
+    height: 150px;
+    @include flex(center, center);
+
+    img {
+      height: 45px;
+    }
+  }
+
+  &__item {
+    padding: 0 20px;
+
+    &__content {
+      padding: 15px 25px;
+      @include flex(center, unset);
+      font-weight: 600;
+      transition: color 0.3s ease 0s;
+
+      i {
+        margin-right: 10px;
+      }
+
+      span {
+        text-transform: capitalize;
+      }
+
+      &:hover {
+        color: $main-color;
+      }
+
+      &.active {
+        border-radius: $border-radius;
+        background-image: linear-gradient(to right, $main-color, $second-color);
+        color: $txt-white;
+      }
+    }
+  }
+}
