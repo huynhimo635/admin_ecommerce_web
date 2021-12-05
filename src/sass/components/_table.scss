@@ -1,0 +1,139 @@
+.table {
+  overflow-y: auto;
+
+  table {
+    width: 100%;
+    min-width: 300px;
+    border-spacing: 0;
+    margin-bottom: 30px;
+  }
+
+  thead {
+    background-color: $second-bg;
+  }
+
+  td {
+    p {
+      width: max-content;
+    }
+  }
+
+  th,
+  td {
+    text-transform: capitalize;
+    padding: 15px 10px;
+    text-align: center;
+
+    i ~ i {
+      margin-left: 20px;
+    }
+
+    i {
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 5px;
+      // transition: background-color 0.3s ease 0s, transform 0.3s ease 0s;
+      display: inline;
+
+      &.isTrue {
+        color: $second-color-green;
+        border-radius: 10px;
+      }
+      &.isFalse {
+        color: $second-color-red;
+        border-radius: 10px;
+      }
+
+      &.tools:hover {
+        &:hover {
+          color: red;
+          background-color: $second-bg;
+          border-radius: 10px;
+          transform: scale(1.25);
+          transition: transform 0.3s ease 0s;
+        }
+      }
+    }
+  }
+
+  th {
+    text-transform: uppercase;
+  }
+
+  td {
+    overflow-wrap: normal;
+  }
+
+  tbody > tr:hover {
+    background-color: $main-color;
+    color: $txt-white;
+
+    i.isFalse {
+      box-shadow: $box-shadow;
+      color: $txt-white;
+      background-color: $second-color-red;
+      border-radius: 10px;
+    }
+
+    i.isTrue {
+      box-shadow: $box-shadow;
+      color: $txt-white;
+      background-color: $second-color-green;
+      border-radius: 10px;
+    }
+  }
+
+  &__pagination {
+    @include flex(center, flex-end);
+    width: 100%;
+    // margin-top: 20px;
+
+    &__item ~ &__item {
+      margin-left: 10px;
+    }
+
+    &__item {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      @include flex(center, center);
+      cursor: pointer;
+      // font-weight: 600;
+
+      &.active,
+      &.active:hover {
+        background-color: $main-color;
+        color: $txt-white;
+        font-weight: 600;
+      }
+
+      &:hover {
+        background-color: $second-color;
+        color: $txt-white;
+      }
+    }
+  }
+}
+
+.update {
+  display: none;
+  width: max-content;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.notUpdate {
+  display: none;
+  width: max-content;
+
+  &.active {
+    display: unset;
+  }
+}
+
+.desc {
+  max-width: 400px;
+  overflow: hidden;
+}

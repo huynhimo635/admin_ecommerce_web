@@ -1,0 +1,172 @@
+.form {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &-group {
+    @include flex(flex-start, center);
+    flex-direction: column;
+
+    .form-title {
+      margin: 10px;
+
+      label {
+        color: $txt-color;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border-radius: $border-radius;
+      font-size: 1.25rem;
+      max-width: 100%;
+
+      textarea {
+        border-radius: unset;
+        font-family: transparent;
+      }
+    }
+
+    span {
+      color: red;
+      font-size: 1rem;
+      height: 30px;
+      padding: 5px;
+      font-style: italic;
+    }
+
+    select {
+      border: none;
+      outline-color: $main-color;
+      appearance: none;
+      text-transform: capitalize;
+      width: 100%;
+    }
+  }
+  .btn-submit {
+    padding: 10px 20px;
+    background-color: $main-color;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: $txt-white;
+    box-shadow: $box-shadow;
+    width: 100%;
+    margin: 30px 0;
+
+    &:hover {
+      background-color: $second-color;
+    }
+  }
+}
+
+.cate-btn-add {
+  display: flex;
+  width: max-content !important;
+  position: absolute;
+  top: 55%;
+  transform: translateY(-45%);
+  margin: 0 !important;
+}
+
+.update-btn {
+  height: 100%;
+  @include flex(center, flex-start);
+
+  .cate-update,
+  .cate-close {
+    padding: 5px 10px;
+    border-radius: $border-radius;
+    font-size: 2.5em;
+    // color: $txt-white;
+    cursor: pointer;
+    transition: transform 0.3s ease 0s;
+  }
+
+  .cate-update ~ .cate-close {
+    margin-left: 10px;
+  }
+
+  .cate-update {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .cate-close:hover {
+    color: rgb(231, 60, 60);
+    transform: scale(1.5);
+  }
+
+  .cate-update:hover {
+    color: green;
+    transform: scale(1.5);
+  }
+}
+
+.image-input {
+  height: 100%;
+  max-height: 100%;
+
+  .image-preview {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    // @include flex(center, center);
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 300px;
+      background-color: white;
+    }
+
+    &__multiple {
+      padding: 10px;
+      // border: 1px solid #000;
+      display: flex;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+  }
+
+  input {
+    display: none;
+    position: absolute;
+  }
+
+  .image-control {
+    @include flex(center, space-between);
+    font-size: 1.25rem;
+
+    span {
+      padding: 10px;
+    }
+    .image-input__btn {
+      padding: 10px;
+      background-color: $main-color;
+      font-weight: 600;
+      color: $txt-white;
+
+      &:hover {
+        background-color: $second-color;
+      }
+    }
+
+    span,
+    .image-input__btn.del {
+      opacity: 0;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  .ckeditor-field {
+    min-height: 300px;
+  }
+}

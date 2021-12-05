@@ -1,0 +1,81 @@
+.login {
+  width: calc(100% - 100px);
+  height: calc(100vh - 100px);
+  box-shadow: 1px 1px 37px -9px rgba(189, 189, 189, 0.7);
+  background-color: $second-bg;
+  border-radius: $border-radius;
+  position: relative;
+  margin: 50px;
+  overflow: hidden;
+
+  .login-form-contain {
+    @include flex(center, space-around);
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__info {
+    height: 5rem;
+    flex-direction: column;
+    @include flex(center, flex-start);
+    margin-bottom: 1.5rem;
+
+    img {
+      @include flex(center, center);
+      height: 100%;
+    }
+
+    span {
+      margin: 0px 15px;
+    }
+  }
+
+  &__form {
+    @include flex(center, center);
+    flex-direction: column;
+
+    &__submit {
+      padding: 10px 20px;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 1px 1px 37px -9px rgba(0, 0, 0, 0.3);
+      margin-bottom: 10px;
+
+      &:hover {
+        background-color: $main-color;
+        color: $txt-white;
+      }
+    }
+
+    .error {
+      span {
+        color: red;
+        font-weight: 300;
+      }
+    }
+  }
+
+  &__banner {
+    // background-color: $main-bg;
+    width: calc(100% + 15px);
+    height: 100%;
+    padding: 50px;
+    // text-align: center;
+    @include flex(center, space-around);
+    flex-direction: column;
+    box-shadow: 1px 1px 37px -9px rgba(0, 0, 0, 0.7);
+
+    background-image: url("../../assets/images/download.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+body {
+  background-color: rgba($color: $second-bg, $alpha: 0.8);
+}
+
+.form {
+  height: unset;
+}

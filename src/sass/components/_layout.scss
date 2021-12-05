@@ -1,0 +1,13 @@
+.layout {
+  color: $txt-color;
+
+  &__content {
+    padding-left: $sidebar-width;
+    background-color: $second-bg;
+    min-height: 100vh;
+
+    &__main {
+      padding: 0 30px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+[class*="col-"] {
+  padding: 0 15px;
+}
+
+@for $val from 1 to 13 {
+  .col-#{$val} {
+    width: calc((100% / 12) * #{$val});
+  }
+}
+
+@include tablet {
+  @for $val from 1 to 13 {
+    .col-md-#{$val} {
+      width: calc((100% / 12) * #{$val});
+    }
+  }
+}
+
+@include mobile {
+  @for $val from 1 to 13 {
+    .col-sm-#{$val} {
+      width: calc((100% / 12) * #{$val});
+    }
+  }
+}

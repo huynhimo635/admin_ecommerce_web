@@ -1,0 +1,56 @@
+.dropdown {
+  position: relative;
+  z-index: 99;
+
+  &__toggle {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+
+    i {
+      font-size: 2.5rem;
+      color: $txt-color;
+    }
+
+    &__badge {
+      @include flex(center, center);
+      position: absolute;
+      top: -12px;
+      right: -10px;
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background-color: $main-color;
+      color: $txt-white;
+      font-size: 0.8rem;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    width: max-content;
+    max-width: 400;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 0.3s ease 0s;
+    background-color: $main-bg;
+    // z-index: 300;
+
+    &.active {
+      transform: scale(1);
+      transition: transform 0.3s $transition-cubic 0s;
+    }
+  }
+
+  &__footer {
+    padding: 20px;
+    text-align: center;
+  }
+}
