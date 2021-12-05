@@ -3,6 +3,7 @@ Link demo : https://bikework.netlify.app .
 
 
 admin : https://bikework-admin.netlify.app .
+login: admin@gmail.com 123456
 
 
 server: https://elysion-api-bike-work.herokuapp.com/ .
